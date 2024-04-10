@@ -1,11 +1,12 @@
 import './_Main.scss';
+import Zero from './img/hangman-0.svg'
 
-export default function Card() {
+export default function Game() {
     return   (
         <section className="container">
 
           <div className="hangman-box">
-            <img src="{Zero}" alt='hangman-img'/>
+            <img src={Zero} alt='hangman-img'/>
             <h1>Hangman Game</h1>
           </div>
           <div className='game-box'>
