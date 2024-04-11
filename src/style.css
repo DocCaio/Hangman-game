@@ -14,22 +14,50 @@ body {
 
 .container {
   display: flex;
+  gap: 70px;
+  align-items: end;
   width: 850px;
   background: #5E63BA;
   align-items: end;
   padding: 60px 40px;
   border-radius: 10px;
 }
-.container .hangman-box img {
+
+.hangman-box img {
   max-width: 270px;
 }
-.container .hangman-box img .hangman-box h1 {
+
+.hangman-box h1 {
   font-size: 1.45em;
   margin-top: 20px;
   text-align: center;
   text-transform: uppercase;
 }
-.container button {
+
+.word-display {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.word-display .letter {
+  width: 28px;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 3px solid #000;
+  border-bottom: 40px;
+}
+
+.word-display .letter .guessed {
+  border-color: transparent;
+  margin: -40px 0 35px;
+}
+
+button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -40,4 +68,41 @@ body {
   cursor: pointer;
   transition: border-color 0.25s;
   color: #000;
+  width: calc(11.1111111111% - 5px);
+  outline: none;
+}
+
+button:hover {
+  background: #FFC745;
+}
+
+.game-box h4 {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.game-box h4 strong {
+  font-weight: 600;
+}
+
+.game-box .guesses-text strong {
+  color: #fff;
+}
+
+.game-box .keyboard {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.game-modal {
+  position: fixed;
+}
+
+.game-modal img {
+  max-width: 130px;
 }/*# sourceMappingURL=style.css.map */

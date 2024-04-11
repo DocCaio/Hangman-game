@@ -1,5 +1,5 @@
 import './_Main.scss';
-import Zero from './img/hangman-0.svg'
+import Zero from './img/hangman-0.svg';
 
 export default function Game() {
     return   (
