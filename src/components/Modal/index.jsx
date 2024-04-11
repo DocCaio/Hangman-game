@@ -8,11 +8,10 @@ export default function Modal() {
              <img src={Lost} alt='gif'/>
              <h4>Game over!</h4>
              <p>The correct word was: 
-                <strong>rainbow</strong>
-                <button className='play-again'>Play Again</button>
+                <strong>rainbow</strong>                
              </p>
+             <button className='play-again'>Play Again</button>
              </div>
-
         </section>
     )   
 
