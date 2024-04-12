@@ -1,22 +1,8 @@
 import './_Main.scss';
 import Zero from './img/hangman-0.svg';
+import './api';
 
-export default function Game() {
-
- // const keyboardDiv = document.querySelector(".keyboard");
-
-  //const getRandomWord = () =>  {
-    //Seleciona uma palavra aleatória da lista de api
-   // const {word, hint} = wordList[Math.floor(Math.random() * wordList.length)];
-  //}
-//Criando teclado de botões
-//for (let i = 97; i <= 122; i++) {
- // const button = document.createElement("button");
- // button.innerText = String.fromCharCode(i);
- // keyboardDiv.appendChild(button);
-//}
-
-//getRandomWord();
+export default function Game() {  
   
     return   (
         <section className="container">
@@ -26,14 +12,7 @@ export default function Game() {
             <h1>Hangman Game</h1>
           </div>
           <div className='game-box'>
-            <ul className='word-display'>
-              <li className='letter'></li>
-              <li className='letter'></li>
-              <li className='letter'></li>
-              <li className='letter'></li>
-              <li className='letter'></li>
-              <li className='letter'></li>
-              <li className='letter'></li>
+            <ul className='word-display'>     
             </ul>
             <h4 className='hint-text'>
               Hint:
