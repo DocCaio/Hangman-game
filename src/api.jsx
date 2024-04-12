@@ -1,12 +1,4 @@
-
-import './App.css';
-import Game from './components/Game';
-import Modal from './components/Modal';
-
-
-function App() {
-
-  const wordList = [
+const wordList = [
     {
         word: "guitar",
         hint: "A musical instrument with strings."
@@ -268,16 +260,3 @@ function App() {
         hint: "Exceptionally clever, talented, or impressive."
     },
 ];
-
-  
-
-  return (
-    <>
-     <Modal/>
-     <Game/>
-     
-    </>
-  )
-}
-
-export default App;

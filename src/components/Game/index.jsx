@@ -2,6 +2,22 @@ import './_Main.scss';
 import Zero from './img/hangman-0.svg';
 
 export default function Game() {
+
+ // const keyboardDiv = document.querySelector(".keyboard");
+
+  //const getRandomWord = () =>  {
+    //Seleciona uma palavra aleatória da lista de api
+   // const {word, hint} = wordList[Math.floor(Math.random() * wordList.length)];
+  //}
+//Criando teclado de botões
+//for (let i = 97; i <= 122; i++) {
+ // const button = document.createElement("button");
+ // button.innerText = String.fromCharCode(i);
+ // keyboardDiv.appendChild(button);
+//}
+
+//getRandomWord();
+  
     return   (
         <section className="container">
 

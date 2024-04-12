@@ -10,6 +10,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   background-color: #242424;
+  padding: 0 10px;
 }
 
 .container {
@@ -49,7 +50,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   border-bottom: 3px solid #000;
-  border-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .word-display .letter .guessed {
@@ -102,13 +103,26 @@ body {
   margin-top: 40px;
 }
 
+@media (max-width: 782px) {
+  .container {
+    flex-direction: column;
+    padding: 30px 15px;
+    align-items: center;
+  }
+  .hangman-box img {
+    max-width: 200px;
+  }
+  .hangman-box h1 {
+    display: none;
+  }
+}
 .game-modal {
   background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
   left: 0;
   top: 0;
   height: 100%;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
 }
@@ -139,6 +153,12 @@ body {
 }
 
 .game-modal button {
-  background: #FFC745;
+  background: #5e63ba;
+  color: #fff;
   padding: 12px 23px;
+}
+
+.game-modal button:hover {
+  background: #FFC745;
+  color: #000;
 }/*# sourceMappingURL=style.css.map */

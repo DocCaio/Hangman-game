@@ -5,7 +5,7 @@
     left: 0;
     top: 0;
     height: 100%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;    
 }
@@ -37,7 +37,13 @@
 }
 
 .game-modal button {
-    background: #FFC745;
+    background: #5e63ba;
+    color: #fff;
     padding: 12px 23px;
+}
+
+.game-modal button:hover {
+    background: #FFC745;
+    color: #000;
 }
 
