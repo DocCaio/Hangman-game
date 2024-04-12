@@ -57,7 +57,7 @@ body {
   margin: -40px 0 35px;
 }
 
-.keyboard button {
+:where(.game-modal, .keyboard) button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -68,11 +68,14 @@ body {
   cursor: pointer;
   transition: border-color 0.25s;
   color: #000;
-  width: calc(11.1111111111% - 5px);
   outline: none;
 }
 
-.keyboard button:hover {
+.keyboard button {
+  width: calc(11.1111111111% - 5px);
+}
+
+:where(.game-modal, .keyboard) button:hover {
   background: #FFC745;
 }
 
@@ -136,5 +139,6 @@ body {
 }
 
 .game-modal button {
+  background: #FFC745;
   padding: 12px 23px;
 }/*# sourceMappingURL=style.css.map */
