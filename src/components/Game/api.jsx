@@ -20,8 +20,8 @@ getRandomWord();
 
 const wordList = [
 {
-   word: "guitar",
-   hint: "A musical instrument with strings."
+   word: "guitarra",
+   hint: "um isntrumento com cordas."
 },
 {
    word: "oxygen",
@@ -40,8 +40,8 @@ const wordList = [
    hint: "The scientific study of celestial objects and phenomena."
 },
 {
-   word: "football",
-   hint: "A popular sport played with a spherical ball."
+   word: "footebol",
+   hint: "esporte popular que se usa uma bola."
 },
 {
    word: "chocolate",
