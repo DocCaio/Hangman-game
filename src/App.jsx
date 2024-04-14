@@ -4,8 +4,7 @@ import Game from './components/Game';
 import Modal from './components/Modal';
 
 
-function App() {
-       
+function App() { 
 
   
 
