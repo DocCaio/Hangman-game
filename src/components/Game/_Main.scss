@@ -91,6 +91,11 @@ body {
         
       }
 
+      .keyboard button [disabled] {
+        opacity: 0.6;
+        pointer-events: none;
+      }
+
       :where(.game-modal, .keyboard) button:hover {
         background:#FFC745;
       }

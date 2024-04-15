@@ -1,6 +1,10 @@
+const hangmanImage = document.querySelector(".hangman-box img");
 const wordDisplay = document.querySelector(".word-display");
-
+const guesessText = document.querySelector(".guesses-text strong");
 const keyboardDiv = document.querySelector(".keyboard");
+
+let currentWord , correctLetter = [], wrongGuessCount = 0;
+const maxGuesses = 6;
 
 const getRandomWord = () =>  {
 //Seleciona uma palavra aleatória da lista de api
@@ -8,6 +12,31 @@ const {word, hint} = wordList[Math.floor(Math.random() * wordList.length)];
 document.querySelector(".hint-text strong").innerHTML = hint;
 wordDisplay.innerHTML  = word.split("").map(() => `<li className='letter'></li>`).join("");
 }
+
+ const initGame = (button , clickedLetter) => {
+   //chegando se a palavra esta correta
+   if(currentWord.includes(clickedLetters)) {
+      //Exibe repsotas corretas
+      [...currentWord].forEach((letter, index) => {
+         if(letter === clickedLetter) {
+            correctLetter.push(letter);
+            wordDisplay.querySelectorAll("li")[index].innerText = letter;
+            wordDisplay.querySelectorAll("li")[index].classList.add("guessesd");
+         }
+      });
+   
+ } else {
+   //Atualiza as palavras
+      wrongGuessCount++;
+      hangmanImage.src = `img/hangman-${wrongGuessCount}.svg`;
+ }
+ button.disabled = true;
+   guesessText.innerHTML = `${wrongGuessCount} / ${maxGuesses}`;
+ 
+   if(wrongGuessCount === maxGuesses) return gameOver(false);
+   if( correctLetter === maxGuesses) return gameOver(false);
+}
+
 //Criando teclado de botões
 for (let i = 97; i <= 122; i++) {
 const button = document.createElement("button");
