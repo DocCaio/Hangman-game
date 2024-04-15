@@ -1,6 +1,6 @@
 import './_Modal.scss';
 import Lost from './img/lost.gif';
-import '../Game/api';
+//import '../Game/api';
 
 export default function Modal() {
     return (

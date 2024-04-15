@@ -1,6 +1,6 @@
 import './_Main.scss';
 import Zero from './img/hangman-0.svg';
-import './api';
+//import './api';
 
 export default function Game() {  
   

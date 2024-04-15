@@ -2,20 +2,47 @@ const hangmanImage = document.querySelector(".hangman-box img");
 const wordDisplay = document.querySelector(".word-display");
 const guesessText = document.querySelector(".guesses-text strong");
 const keyboardDiv = document.querySelector(".keyboard");
+const gameModal = document.querySelector(".game-modal");
+const playAgainBtn = document.querySelector(".play-again");
 
-let currentWord , correctLetter = [], wrongGuessCount = 0;
+let currentWord , correctLetter, wrongGuessCount;
 const maxGuesses = 6;
+
+const resetGame = ()=> {
+   //Resetao o jogo
+   correctLetter = [];
+   wrongGuessCount = 0;
+   guesessText.innerHTML = `${wrongGuessCount} / ${maxGuesses}`;
+   keyboardDiv.querySelectorAll("button").forEach(btn => btn.disabled = false)
+   guesessText.innerHTML = `${wrongGuessCount} / ${maxGuesses}`;
+   wordDisplay.innerHTML  = currentWord.split("").map(() => `<li className='letter'></li>`).join("");
+   gameModal.classList.remove("show");
+} 
 
 const getRandomWord = () =>  {
 //Seleciona uma palavra aleatória da lista de api
 const {word, hint} = wordList[Math.floor(Math.random() * wordList.length)];
 document.querySelector(".hint-text strong").innerHTML = hint;
-wordDisplay.innerHTML  = word.split("").map(() => `<li className='letter'></li>`).join("");
+resetGame();
+
+}
+
+const gameOver = (isVictory) => {
+   //depois de u mtempo revela os detalhes
+   setTimeout(() => {      
+      const modalText = isVictory ? `Você achou a palavra:` : `The correct word was:`;
+      gameModal.querySelector("img").src =`img/${isVictory ? `vicyory` : `lost`}.gif `;
+      gameModal.querySelector("img").innerHTML =`img/${isVictory ? `Congrats` : `Game over`} `; 
+      gameModal.querySelector("p").innerHTML =`img/${modalText}  <strong>${currentWord}</strong>`;
+      gameModal.classList.add("show")
+
+    gameModal.classList.add("show");
+   },300)
 }
 
  const initGame = (button , clickedLetter) => {
    //chegando se a palavra esta correta
-   if(currentWord.includes(clickedLetters)) {
+   if(currentWord.includes(clickedLetter)) {
       //Exibe repsotas corretas
       [...currentWord].forEach((letter, index) => {
          if(letter === clickedLetter) {
@@ -32,20 +59,22 @@ wordDisplay.innerHTML  = word.split("").map(() => `<li className='letter'></li>`
  }
  button.disabled = true;
    guesessText.innerHTML = `${wrongGuessCount} / ${maxGuesses}`;
+   //Game over
  
    if(wrongGuessCount === maxGuesses) return gameOver(false);
-   if( correctLetter === maxGuesses) return gameOver(false);
+   if( correctLetter.length === currentWord.length) return gameOver(true);
 }
 
 //Criando teclado de botões
 for (let i = 97; i <= 122; i++) {
 const button = document.createElement("button");
 button.innerHTML = String.fromCharCode(i);
-keyboardDiv.appendChild(button);
+//keyboardDiv.appendChild(button);
 button.addEventListener("click", e => initGame(e.target,String.fromCharCode(i)));
 }
 
 getRandomWord();
+playAgainBtn.addEventListener("click", getRandomWord);
 
 const wordList = [
 {
