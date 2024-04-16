@@ -4,7 +4,7 @@
 
 
 
-  [![My Skills](https://skillicons.dev/icons?i=html,css,js,nodejs,react,vite)](https://skillicons.dev)
+  [![My Skills](https://skillicons.dev/icons?i=html,css,js,sass,nodejs,react,vite)](https://skillicons.dev)
 
 
   # :hammer: Project features
