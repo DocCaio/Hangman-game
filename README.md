@@ -18,6 +18,7 @@
   <img src="https://github.com/DocCaio/Hangman-game/blob/main/public/screenShot.png" alt="Minha Figura">
 
 ### npm run dev
+### npm install -g sass
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
